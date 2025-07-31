@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Line Hotels - Where Luxury Meets the Sea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Ocean Line</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#hotels" class="nav-link">Hotels</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#offers" class="nav-link">Offers</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="cinzel">Ocean Line Hotels</h1>
+            <p>Where the waves meet luxury, and your journey finds a home</p>
+            <a href="#hotels" class="cta-button">Explore Our Hotels</a>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="cinzel">Our Luxury Hotels</h2>
+                <p>Experience world-class hospitality at our stunning beachfront locations</p>
+            </div>
+            <div class="hotels-grid">
+                <div class="hotel-card fade-in" onclick="openBookingModal('Ocean Line Resort - Galkissa')">
+                    <div class="hotel-image"></div>
+                    <div class="hotel-card-content">
+                        <h3>Ocean Line Resort - Galkissa</h3>
+                        <p>A luxurious beachfront hotel with panoramic sea views and modern amenities.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Beach Access</span>
+                            <span class="feature-tag">Spa</span>
+                            <span class="feature-tag">Pool</span>
+                        </div>
+                        <button class="book-button">Book Now</button>
+                    </div>
+                </div>
+                <div class="hotel-card fade-in" onclick="openBookingModal('The Ocean Line Inn - Unawatuna')">
+                    <div class="hotel-image"></div>
+                    <div class="hotel-card-content">
+                        <h3>The Ocean Line Inn - Unawatuna</h3>
+                        <p>A cozy and elegant inn located along the shoreline, perfect for a serene getaway.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Beachfront</span>
+                            <span class="feature-tag">Restaurant</span>
+                            <span class="feature-tag">WiFi</span>
+                        </div>
+                        <button class="book-button">Book Now</button>
+                    </div>
+                </div>
+                <div class="hotel-card fade-in" onclick="openBookingModal('Ocean Line Vista - Trinco')">
+                    <div class="hotel-image"></div>
+                    <div class="hotel-card-content">
+                        <h3>Ocean Line Vista - Trinco</h3>
+                        <p>A boutique hotel offering stunning ocean vistas and personalized service.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Ocean View</span>
+                            <span class="feature-tag">Boutique</span>
+                            <span class="feature-tag">Bar</span>
+                        </div>
+                        <button class="book-button">Book Now</button>
+                    </div>
+                </div>
+                <div class="hotel-card fade-in" onclick="openBookingModal('Ocean Line Retreat - Hambantota')">
+                    <div class="hotel-image"></div>
+                    <div class="hotel-card-content">
+                        <h3>Ocean Line Retreat - Hambantota</h3>
+                        <p>A tranquil retreat designed for relaxation, nestled near the waves.</p>
+                        <div class="hotel-features">
+                            <span class="feature-tag">Retreat</span>
+                            <span class="feature-tag">Wellness</span>
+                            <span class="feature-tag">Yoga</span>
+                        </div>
+                        <button class="book-button">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-container">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="cinzel">Photo Gallery</h2>
+                <p>Discover the beauty of our hotels and surroundings</p>
+            </div>
+            <div class="image-slider">
+                <div class="slider-images" id="slider-images">
+                    <div class="slider-image" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                        <h3>Luxury Suites</h3>
+                    </div>
+                    <div class="slider-image" style="background: linear-gradient(45deg, #74b9ff, #0984e3);">
+                        <h3>Ocean Views</h3>
+                    </div>
+                    <div class="slider-image" style="background: linear-gradient(45deg, #c9a876, #b8956a);">
+                        <h3>Fine Dining</h3>
+                    </div>
+                    <div class="slider-image" style="background: linear-gradient(45deg, #00b894, #00a085);">
+                        <h3>Spa & Wellness</h3>
+                    </div>
+                </div>
+                <button class="slider-controls prev-btn" onclick="prevSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-controls next-btn" onclick="nextSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="slider-dots" id="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="cinzel">Culinary Excellence</h2>
+                <p>Indulge in our signature dishes and exquisite flavors</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item fade-in">
+                    <div class="menu-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <h3>Signature Cocktails</h3>
+                    <p>Expertly crafted drinks with premium spirits and fresh ingredients</p>
+                    <div class="menu-price">From LKR 1,200</div>
+                </div>
+                <div class="menu-item fade-in">
+                    <div class="menu-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Fresh Seafood</h3>
+                    <p>Daily catch prepared by our master chefs with local spices</p>
+                    <div class="menu-price">From LKR 2,500</div>
+                </div>
+                <div class="menu-item fade-in">
+                    <div class="menu-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Artisan Desserts</h3>
+                    <p>Handcrafted sweets and pastries made with love</p>
+                    <div class="menu-price">From LKR 800</div>
+                </div>
+                <div class="menu-item fade-in">
+                    <div class="menu-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Gourmet Dining</h3>
+                    <p>International cuisine with a local twist, prepared with finest ingredients</p>
+                    <div class="menu-price">From LKR 3,500</div>
+                </div>
+                <div class="menu-item fade-in">
+                    <div class="menu-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Premium Coffee</h3>
+                    <p>Specialty coffee blends from the finest Ceylon tea estates</p>
+                    <div class="menu-price">From LKR 600</div>
+                </div>
+                <div class="menu-item fade-in">
+                    <div class="menu-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Healthy Options</h3>
+                    <p>Fresh salads, smoothie bowls, and nutritious alternatives</p>
+                    <div class="menu-price">From LKR 1,800</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="cinzel">Special Offers</h2>
+                <p>Discover our exclusive packages and seasonal promotions</p>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card fade-in" onclick="openOfferModal('Art of Staycation')">
+                    <h3 class="offer-title">Art of Staycation</h3>
+                    <p class="offer-description">Breakfast inclusive package with luxury amenities and late checkout</p>
+                    <span class="offer-badge">From LKR 18,500/night</span>
+                </div>
+                <div class="offer-card fade-in" onclick="openOfferModal('Limited Period Escapes')">
+                    <h3 class="offer-title">Limited Period Escapes</h3>
+                    <p class="offer-description">Enjoy 25% savings on your stay with our exclusive escape package</p>
+                    <span class="offer-badge">25% OFF</span>
+                </div>
+                <div class="offer-card fade-in" onclick="openOfferModal('Couple Goals Pro')">
+                    <h3 class="offer-title">Couple Goals Pro</h3>
+                    <p class="offer-description">Romantic getaway package with meals and spa treatments</p>
+                    <span class="offer-badge">From LKR 22,000/night</span>
+                </div>
+                <div class="offer-card fade-in" onclick="openOfferModal('Family Retreat')">
+                    <h3 class="offer-title">Family Retreat</h3>
+                    <p class="offer-description">Perfect family package with activities and all-inclusive meals</p>
+                    <span class="offer-badge">From LKR 35,000/night</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 class="cinzel">Get In Touch</h2>
+                <p>We're here to make your stay unforgettable</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+94 11 123 4567<br>+94 77 987 6543</p>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@oceanlinehotels.com<br>reservations@oceanlinehotels.com</p>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Locations</h3>
+                    <p>Multiple beachfront locations<br>across Sri Lanka</p>
+                </div>
+            </div>
+            <div class="social-links fade-in">
+                <a href="#" class="social-link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-link" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ocean Line Hotels</h3>
+                    <p>Experience the perfect blend of luxury and tranquility at our pristine beachside locations.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#hotels">Hotels</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#offers">Offers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Accommodation</a></li>
+                        <li><a href="#">Fine Dining</a></li>
+                        <li><a href="#">Spa & Wellness</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Water Sports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for latest updates and exclusive offers</p>
+                    <div style="margin-top: 1rem;">
+                        <input type="email" placeholder="Enter your email" style="padding: 0.5rem; border: none; border-radius: 5px; margin-right: 0.5rem; width: 200px;">
+                        <button style="padding: 0.5rem 1rem; background: var(--primary-gold); color: white; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ocean Line Hotels. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bookingModal')">&times;</span>
+            <h2 class="cinzel" id="hotelName">Book Your Stay</h2>
+            <form id="bookingForm">
+                <div style="margin-bottom: 1rem;">
+                    <label for="checkIn">Check-in Date:</label>
+                    <input type="date" id="checkIn" style="width: 100%; padding: 0.8rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="checkOut">Check-out Date:</label>
+                    <input type="date" id="checkOut" style="width: 100%; padding: 0.8rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="guests">Number of Guests:</label>
+                    <select id="guests" style="width: 100%; padding: 0.8rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="roomType">Room Type:</label>
+                    <select id="roomType" style="width: 100%; padding: 0.8rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="standard">Standard Room</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Suite</option>
+                        <option value="villa">Private Villa</option>
+                    </select>
+                </div>
+                <button type="submit" style="background: var(--ocean-gradient); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; width: 100%; font-weight: 600; cursor: pointer; font-size: 1rem;">
+                    Complete Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Offer Modal -->
+    <div id="offerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('offerModal')">&times;</span>
+            <h2 class="cinzel" id="offerTitle">Special Offer</h2>
+            <div id="offerDetails">
+                <p>Loading offer details...</p>
+            </div>
+            <button onclick="openBookingModal('Special Offer Package')" style="background: var(--primary-gold); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; width: 100%; font-weight: 600; cursor: pointer; font-size: 1rem; margin-top: 1rem;">
+                Book This Offer
+            </button>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
